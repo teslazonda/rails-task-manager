@@ -1,3 +1,10 @@
 <h2><%= @task.title %></h2>
-<p><%= @task.details %></p>
-<p><%= @task.completed.to_s %></p>
+<div class="d-flex">
+  <% if @task.completed %>
+    <li><i class="far fa-check-square"></i></li>
+  <% else %>
+    <i class="far fa-square"></i>
+  <% end %>
+  <p><%= @task.details %></p>
+</div>
+<h3><%= link_to 'Back to main page', tasks_path %></h3>
