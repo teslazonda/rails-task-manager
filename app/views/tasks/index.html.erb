@@ -5,11 +5,14 @@
       <div class="d-flex">
         <li><i class="far fa-check-square"></i></li>
       <% else %>
-      <div class="d-flex">
-        <i class="far fa-square"></i>
+        <div class="d-flex">
+        <li><i class="far fa-square"></i></li>
       <% end %>
       <li><%= link_to task.title, task_path(task)%></li>
+      <li><%= link_to '🗑️️', destroy_path(task), method: :delete,
+            data: { confirm: "Are you sure you want to delete #{task.title}?" } %></li>
       </div>
+      <li><%= link_to 'Edit Task', edit_path(task)%></li>
     <% end %>
 </ul>
 <p><%= link_to 'Make a new task', new_path %></p>
